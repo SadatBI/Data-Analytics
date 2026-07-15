@@ -1,6 +1,6 @@
 title: Sadat
 logo: assets/images/profile_pig.png
 show_downloads: True
-remote_theme: pages-themes/miniml@v0.2.0
+remote_theme: pages-themes/cayman@v0.2.0
 plugins:
-- jelly-remote-theme
+- jekyll-remote-theme 
