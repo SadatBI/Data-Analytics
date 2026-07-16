@@ -1,154 +1,50 @@
-# 👤 Portfolio - Sadat Ibrahim
+# Data Analysis Portfolio
+Welcome to my data analysis repository. This project showcases data-driven insights, predictive modeling, and strategic recommendations across retail operations and corporate human resources. 
 
-## About Me
-
-I'm **Sadat Ibrahim**, a passionate **Data Analyst**, **Business Analyst**, and **Statistical Analyst** with expertise in transforming complex datasets into actionable business insights. With a strong foundation in data visualization, statistical modeling, and business intelligence, I help organizations unlock the value hidden in their data.
-
-**Specializations:**
-- 📊 Data Analysis & Visualization
-- 👥 Employee Analytics & HR Intelligence
-- 📈 Business Performance Metrics
-- 🔬 Statistical Modeling & Forecasting
-- 💼 Business Intelligence & Dashboarding
+## 📌 Repository Overview
+This repository contains a curated collection of data analysis projects focused on exploratory data analysis (EDA), retail performance optimization, customer behavior, and employee retention strategies.
 
 ---
-
-## 📊 Employee Attrition Analysis - Executive Summary
-
-### Overview
-This analysis examines **employee attrition patterns** to identify key factors influencing employee departure decisions and provide data-driven retention strategies.
-
-### 🎯 Key Objectives
-- Identify demographic and behavioral patterns in attrition
-- Determine primary factors influencing employee departure
-- Build predictive models for early intervention
-- Provide actionable retention strategies
-
+### 🛠️ Tech Stack & Core Skills
+* **Data Visualization:** Power BI, Excel Dashboards, Interactive Reporting
+* **Data Manipulation:** Advanced Excel, Pivot Tables, Power Query, Data Modeling
+* **Analytics Specialties:** Data Cleaning, Feature Engineering, Retail Analytics, HR/Workforce 
+Analytics-
 ---
 
-## 📈 Analysis Findings
+### 🛍️ 1. Zeno Mart Analysis
 
-### Attrition Rate Summary
-| Metric | Value |
-|--------|-------|
-| Overall Attrition Rate | Varies by department |
-| Highest Risk Group | Early tenure (0-2 years) |
-| Primary Driver | Job Satisfaction |
-| Average Impact | 15-25% potential reduction |
+### Project Overview
+An in-depth analysis of Zeno Mart's sales data, inventory management, and customer purchasing patterns. The goal of this project was to identify revenue drivers and optimize product placement strategies.
 
-### 🔴 High-Risk Employee Segments
+### Key Objectives
+* **Cleaned messy datasets** by removing duplicates, fixing structural errors, and handling missing 
+data.
+* **Engineered new variables** and metrics using advanced formulas to unlock deeper data 
+insights.
+* **Transformed raw transaction records** into a structured format ready for immediate business 
+analysis.
 
-| Risk Factor | Impact | Characteristics |
-|-------------|--------|-----------------|
-| **Early Tenure** | 🔴 Critical | Employees within first 2 years |
-| **Low Salary** | 🔴 High | Below-market compensation |
-| **Limited Growth** | 🟠 Moderate | No promotion/training opportunities |
-| **Poor Work-Life Balance** | 🟠 Moderate | Overwork and burnout indicators |
-| **Department Variation** | 🟡 Variable | Some departments affected more |
 
-### 📊 Top Attrition Drivers (Ranked by Impact)
+### 🛒 2. Expressmart Performance Analysis
 
-```
-1. Job Satisfaction Level          ████████████████████ (100%)
-2. Tenure & Career Progression     ██████████████████░░ (90%)
-3. Work-Life Balance               ████████████████░░░░ (80%)
-4. Salary Competitiveness          ████████████░░░░░░░░ (60%)
-5. Management Quality              ██████████░░░░░░░░░░ (50%)
-```
+### Project Overview
+A comprehensive evaluation of Expressmart's business metrics, focusing on multi-store retail efficiency, regional performance disparities, and profit margin optimizations.
 
-### 👥 Demographic Patterns
+### Key Objectives
+* **Built interactive dashboards** to visualize key performance indicators and track business 
+health.
+* **Summarized complex datasets** using dynamic Pivot Tables to reveal sales trends and patterns.
+* **Created visual charts** and slicers to let stakeholders easily filter and explore the data.
 
-| Demographic | Finding |
-|-------------|---------|
-| **Age (20-35)** | Higher attrition rates in younger workforce |
-| **Tenure Groups** | Highest turnover in first 2 years |
-| **Department** | Variation across business units |
-| **Compensation Level** | Inverse relationship with retention |
-| **Education Level** | Background influences retention risk |
+## 👥 3. Employee Attrition Project
 
----
+### Project Overview
+A predictive and diagnostic human resources analytics project aimed at understanding the primary root causes of corporate turnover and building models to predict employee attrition rate.
 
-## 🤖 Predictive Model Performance
+### Key Objectives
 
-### Model Overview
-- **Algorithms Used:** Logistic Regression, Decision Trees, Random Forest, Gradient Boosting
-- **Validation Method:** Cross-validation with ROC-AUC analysis
-- **Purpose:** Identify high-risk employees for targeted retention efforts
-
-### Key Metrics
-| Metric | Status |
-|--------|--------|
-| Prediction Accuracy | High predictive power |
-| False Positive Rate | Balanced |
-| Top Predictive Features | Job Satisfaction, Tenure, Salary |
-
----
-
-## 💡 Strategic Recommendations
-
-### 1. Enhanced Onboarding Program
-- Improve first-year employee experience
-- Implement mentorship for new hires
-- Reduce early-tenure attrition
-
-### 2. Career Development Pathways
-- Create transparent promotion criteria
-- Offer skill development programs
-- Regular career progression conversations
-
-### 3. Compensation Review
-- Conduct market salary analysis
-- Adjust below-market positions
-- Implement performance-based incentives
-
-### 4. Work-Life Balance Initiatives
-- Monitor and optimize workload distribution
-- Promote flexible work arrangements
-- Prevent burnout through proactive management
-
-### 5. Management Excellence Program
-- Train managers in employee engagement
-- Implement 360-degree feedback systems
-- Recognize high-performing managers
-
----
-
-## 📌 Quick Wins (Immediate Actions)
-
-✅ Identify current high-risk employees using predictive model  
-✅ Initiate retention conversations with flagged employees  
-✅ Review compensation for undervalued roles  
-✅ Strengthen new hire onboarding process  
-
----
-
-## 🎯 Expected Business Impact
-
-**Implementation of Recommendations Will Deliver:**
-
-| Outcome | Potential Improvement |
-|---------|----------------------|
-| Annual Attrition Reduction | 15-25% decrease |
-| Replacement Cost Savings | Significant ROI |
-| Employee Satisfaction | 20%+ improvement |
-| Team Stability & Productivity | Enhanced performance |
-| Employer Brand | Stronger talent attraction |
-
----
-
-## 📁 Analysis Details
-
-**Repository:** [Employee Attrition Analysis](https://github.com/SadatBI/data-analysis/tree/main/employee-attrition-analysis)  
-**Analysis Date:** July 2026  
-**Prepared By:** Sadat Ibrahim
-
----
-
-## 🔗 Connect & Learn More
-
-- **GitHub Profile:** [SadatBI](https://github.com/SadatBI)
-- **Repository:** [Data Analysis Projects](https://github.com/SadatBI/data-analysis)
-
----
-
-*Last Updated: July 15, 2026*
+* **Conduct Exploratory Data Analysis (EDA)** on demographic, financial, and workplace satisfaction variables.
+* **Modeled complex data relationships** in Power BI for a deeper analysis than Excel allows.
+* **Identify statistically significant features** correlated with higher employee attrition.
+* **Build and evaluate machine learning models** to predict vulnerable roles.
