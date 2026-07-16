@@ -1,17 +1,3 @@
-# 👤 Portfolio - Sadat Ibrahim
-
-## About Me
-
-I'm **Sadat Ibrahim**, a passionate **Data Analyst**, **Business Analyst**, and **Statistical Analyst** with expertise in transforming complex datasets into actionable business insights. With a strong foundation in data visualization, statistical modeling, and business intelligence, I help organizations unlock the value hidden in their data.
-
-**Specializations:**
-- 📊 Data Analysis & Visualization
-- 👥 Employee Analytics & HR Intelligence
-- 📈 Business Performance Metrics
-- 🔬 Statistical Modeling & Forecasting
-- 💼 Business Intelligence & Dashboarding
-
----
 
 ## 📊 Employee Attrition Analysis - Executive Summary
 
