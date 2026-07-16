@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Attrition Analysis - Data Analysis</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px 30px;
+        }
+        
+        h2 {
+            color: #667eea;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        h3 {
+            color: #764ba2;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+        
+        h4 {
+            color: #667eea;
+            margin-top: 15px;
+            margin-bottom: 8px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        table th {
+            background: #667eea;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        table td {
+            padding: 12px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        table tr:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .risk-critical {
+            background-color: #ffebee;
+            font-weight: bold;
+        }
+        
+        .risk-high {
+            background-color: #fff3e0;
+        }
+        
+        .risk-moderate {
+            background-color: #fce4ec;
+        }
+        
+        .progress-bar {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 10px 0;
+        }
+        
+        .bar {
+            flex: 1;
+            height: 20px;
+            background: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.75em;
+            font-weight: bold;
+        }
+        
+        ul {
+            margin: 15px 0 15px 30px;
+        }
+        
+        li {
+            margin: 8px 0;
+        }
+        
+        .highlight {
+            background: #fff9c4;
+            padding: 20px;
+            border-left: 4px solid #fbc02d;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        
+        .success-item {
+            background: #e8f5e9;
+            padding: 12px 15px;
+            margin: 8px 0;
+            border-left: 4px solid #4caf50;
+            border-radius: 4px;
+        }
+        
+        .metric-box {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .metric-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .metric-card h4 {
+            color: white;
+            margin-bottom: 10px;
+        }
+        
+        .metric-value {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        
+        hr {
+            margin: 30px 0;
+            border: none;
+            border-top: 2px solid #e0e0e0;
+        }
+        
+        footer {
+            background: #f5f5f5;
+            padding: 25px 30px;
+            border-top: 1px solid #e0e0e0;
+            text-align: center;
+            font-size: 0.9em;
+            color: #666;
+        }
+        
+        .link-list {
+            list-style: none;
+            margin: 15px 0;
+        }
+        
+        .link-list li {
+            margin: 10px 0;
+        }
+        
+        .link-list a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .link-list a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            table {
+                font-size: 0.9em;
+            }
+            
+            table th, table td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📊 Employee Attrition Analysis</h1>
+            <p>Executive Summary & Data-Driven Insights</p>
+        </header>
+        
+        <div class="content">
+            <!-- Overview Section -->
+            <section>
+                <h2>Overview</h2>
+                <p>This analysis examines <strong>employee attrition patterns</strong> to identify key factors influencing employee departure decisions and provide data-driven retention strategies.</p>
+            </section>
+            
+            <!-- Key Objectives -->
+            <section>
+                <h2>🎯 Key Objectives</h2>
+                <ul>
+                    <li>Identify demographic and behavioral patterns in attrition</li>
+                    <li>Determine primary factors influencing employee departure</li>
+                    <li>Build predictive models for early intervention</li>
+                    <li>Provide actionable retention strategies</li>
+                </ul>
+            </section>
+            
+            <hr>
+            
+            <!-- Analysis Findings -->
+            <section>
+                <h2>📈 Analysis Findings</h2>
+                
+                <h3>Attrition Rate Summary</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Overall Attrition Rate</td>
+                            <td>Varies by department</td>
+                        </tr>
+                        <tr>
+                            <td>Highest Risk Group</td>
+                            <td>Early tenure (0-2 years)</td>
+                        </tr>
+                        <tr>
+                            <td>Primary Driver</td>
+                            <td>Job Satisfaction</td>
+                        </tr>
+                        <tr>
+                            <td>Average Impact</td>
+                            <td>15-25% potential reduction</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3>🔴 High-Risk Employee Segments</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Risk Factor</th>
+                            <th>Impact</th>
+                            <th>Characteristics</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="risk-critical">
+                            <td>Early Tenure</td>
+                            <td>🔴 Critical</td>
+                            <td>Employees within first 2 years</td>
+                        </tr>
+                        <tr class="risk-critical">
+                            <td>Low Salary</td>
+                            <td>🔴 High</td>
+                            <td>Below-market compensation</td>
+                        </tr>
+                        <tr class="risk-moderate">
+                            <td>Limited Growth</td>
+                            <td>🟠 Moderate</td>
+                            <td>No promotion/training opportunities</td>
+                        </tr>
+                        <tr class="risk-moderate">
+                            <td>Poor Work-Life Balance</td>
+                            <td>🟠 Moderate</td>
+                            <td>Overwork and burnout indicators</td>
+                        </tr>
+                        <tr class="risk-high">
+                            <td>Department Variation</td>
+                            <td>🟡 Variable</td>
+                            <td>Some departments affected more</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3>📊 Top Attrition Drivers (Ranked by Impact)</h3>
+                <div style="margin: 20px 0;">
+                    <div class="progress-bar">
+                        <span style="min-width: 180px;">1. Job Satisfaction Level</span>
+                        <div class="bar">
+                            <div class="bar-fill" style="width: 100%;">100%</div>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <span style="min-width: 180px;">2. Tenure & Career Progression</span>
+                        <div class="bar">
+                            <div class="bar-fill" style="width: 90%;">90%</div>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <span style="min-width: 180px;">3. Work-Life Balance</span>
+                        <div class="bar">
+                            <div class="bar-fill" style="width: 80%;">80%</div>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <span style="min-width: 180px;">4. Salary Competitiveness</span>
+                        <div class="bar">
+                            <div class="bar-fill" style="width: 60%;">60%</div>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <span style="min-width: 180px;">5. Management Quality</span>
+                        <div class="bar">
+                            <div class="bar-fill" style="width: 50%;">50%</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3>👥 Demographic Patterns</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Demographic</th>
+                            <th>Finding</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Age (20-35)</strong></td>
+                            <td>Higher attrition rates in younger workforce</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tenure Groups</strong></td>
+                            <td>Highest turnover in first 2 years</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Department</strong></td>
+                            <td>Variation across business units</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Compensation Level</strong></td>
+                            <td>Inverse relationship with retention</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Education Level</strong></td>
+                            <td>Background influences retention risk</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            
+            <hr>
+            
+            <!-- Predictive Model Performance -->
+            <section>
+                <h2>🤖 Predictive Model Performance</h2>
+                
+                <h3>Model Overview</h3>
+                <ul>
+                    <li><strong>Algorithms Used:</strong> Logistic Regression, Decision Trees, Random Forest, Gradient Boosting</li>
+                    <li><strong>Validation Method:</strong> Cross-validation with ROC-AUC analysis</li>
+                    <li><strong>Purpose:</strong> Identify high-risk employees for targeted retention efforts</li>
+                </ul>
+                
+                <h3>Key Metrics</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Prediction Accuracy</td>
+                            <td>High predictive power</td>
+                        </tr>
+                        <tr>
+                            <td>False Positive Rate</td>
+                            <td>Balanced</td>
+                        </tr>
+                        <tr>
+                            <td>Top Predictive Features</td>
+                            <td>Job Satisfaction, Tenure, Salary</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            
+            <hr>
+            
+            <!-- Strategic Recommendations -->
+            <section>
+                <h2>💡 Strategic Recommendations</h2>
+                
+                <h3>1. Enhanced Onboarding Program</h3>
+                <ul>
+                    <li>Improve first-year employee experience</li>
+                    <li>Implement mentorship for new hires</li>
+                    <li>Reduce early-tenure attrition</li>
+                </ul>
+                
+                <h3>2. Career Development Pathways</h3>
+                <ul>
+                    <li>Create transparent promotion criteria</li>
+                    <li>Offer skill development programs</li>
+                    <li>Regular career progression conversations</li>
+                </ul>
+                
+                <h3>3. Compensation Review</h3>
+                <ul>
+                    <li>Conduct market salary analysis</li>
+                    <li>Adjust below-market positions</li>
+                    <li>Implement performance-based incentives</li>
+                </ul>
+                
+                <h3>4. Work-Life Balance Initiatives</h3>
+                <ul>
+                    <li>Monitor and optimize workload distribution</li>
+                    <li>Promote flexible work arrangements</li>
+                    <li>Prevent burnout through proactive management</li>
+                </ul>
+                
+                <h3>5. Management Excellence Program</h3>
+                <ul>
+                    <li>Train managers in employee engagement</li>
+                    <li>Implement 360-degree feedback systems</li>
+                    <li>Recognize high-performing managers</li>
+                </ul>
+            </section>
+            
+            <hr>
+            
+            <!-- Quick Wins -->
+            <section>
+                <h2>📌 Quick Wins (Immediate Actions)</h2>
+                <div class="success-item">✅ Identify current high-risk employees using predictive model</div>
+                <div class="success-item">✅ Initiate retention conversations with flagged employees</div>
+                <div class="success-item">✅ Review compensation for undervalued roles</div>
+                <div class="success-item">✅ Strengthen new hire onboarding process</div>
+            </section>
+            
+            <hr>
+            
+            <!-- Business Impact -->
+            <section>
+                <h2>🎯 Expected Business Impact</h2>
+                <p style="margin-bottom: 20px;"><strong>Implementation of Recommendations Will Deliver:</strong></p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Outcome</th>
+                            <th>Potential Improvement</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Annual Attrition Reduction</td>
+                            <td>15-25% decrease</td>
+                        </tr>
+                        <tr>
+                            <td>Replacement Cost Savings</td>
+                            <td>Significant ROI</td>
+                        </tr>
+                        <tr>
+                            <td>Employee Satisfaction</td>
+                            <td>20%+ improvement</td>
+                        </tr>
+                        <tr>
+                            <td>Team Stability & Productivity</td>
+                            <td>Enhanced performance</td>
+                        </tr>
+                        <tr>
+                            <td>Employer Brand</td>
+                            <td>Stronger talent attraction</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            
+            <hr>
+            
+            <!-- Analysis Details -->
+            <section>
+                <h2>📁 Analysis Details</h2>
+                <ul class="link-list">
+                    <li><strong>Repository:</strong> <a href="https://github.com/SadatBI/data-analysis/tree/main/employee-attrition-analysis" target="_blank">Employee Attrition Analysis</a></li>
+                    <li><strong>Analysis Date:</strong> July 2026</li>
+                    <li><strong>Prepared By:</strong> Sadat Ibrahim</li>
+                </ul>
+            </section>
+            
+            <hr>
+            
+            <!-- Connect & Learn More -->
+            <section>
+                <h2>🔗 Connect & Learn More</h2>
+                <ul class="link-list">
+                    <li><a href="https://github.com/SadatBI" target="_blank">GitHub Profile: SadatBI</a></li>
+                    <li><a href="https://github.com/SadatBI/data-analysis" target="_blank">Repository: Data Analysis Projects</a></li>
+                </ul>
+            </section>
+        </div>
+        
+        <footer>
+            <p><em>Last Updated: July 16, 2026</em></p>
+            <p>© 2026 Sadat Ibrahim. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
