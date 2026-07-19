@@ -2,7 +2,7 @@
 Welcome to my data analysis repository. This project showcases data-driven insights, predictive modeling, and strategic recommendations across retail operations and corporate human resources. 
 
 ## 📌 Repository Overview
-This repository contains a curated collection of data analysis projects focused on exploratory data analysis (EDA), retail performance optimization, customer behavior, and employee retention strategies.
+This repository contains a curated collection of data analysis projects focused on exploratory data analysis (EDA), retail performance optimization and customer behavior.
 
 ---
 ### 🛠️ Tech Stack & Core Skills
