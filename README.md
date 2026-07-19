@@ -36,15 +36,3 @@ A comprehensive evaluation of Expressmart's business metrics, focusing on multi-
 health.
 * **Summarized complex datasets** using dynamic Pivot Tables to reveal sales trends and patterns.
 * **Created visual charts** and slicers to let stakeholders easily filter and explore the data.
-
-## 👥 3. Employee Attrition Project
-
-### Project Overview
-A predictive and diagnostic human resources analytics project aimed at understanding the primary root causes of corporate turnover and building models to predict employee attrition rate.
-
-### Key Objectives
-
-* **Conduct Exploratory Data Analysis (EDA)** on demographic, financial, and workplace satisfaction variables.
-* **Modeled complex data relationships** in Power BI for a deeper analysis than Excel allows.
-* **Identify statistically significant features** correlated with higher employee attrition.
-* **Build and evaluate machine learning models** to predict vulnerable roles.
