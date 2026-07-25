@@ -6,7 +6,7 @@ This repository contains a curated collection of data analysis projects focused 
 
 ---
 ### 🛠️ Tech Stack & Core Skills
-* **Data Visualization:** Power BI, Excel Dashboards, Interactive Reporting
+* **Data Visualization:** Excel Dashboards, Interactive Reporting
 * **Data Manipulation:** Advanced Excel, Pivot Tables, Power Query, Data Modeling
 * **Analytics Specialties:** Data Cleaning, Feature Engineering, Retail Analytics.
 ---
