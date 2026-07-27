@@ -3,10 +3,14 @@
 ## 📌 Project Overview
 The goal of this project was to take a raw, messy customer transaction dataset and transform it into a structured, analysis-ready data model. The original data contained poorly formatted text fields, raw email strings, and unstandardized dates that prevented reliable segmentation by demographics or geography. 
 
+![Raw data.png](src/Raw%20data.png)
+
 Using Power Query, I built a repeatable data transformation pipeline to extract clean customer details, standardize time-intelligence parameters, and engineer profitability metrics per order. This structured star-schema foundation allows the business to seamlessly break down sales patterns by customer age, regional distribution, and loyalty tier status.
 
+![power query.png](src/power%20query.png)
+
 ## 🛠️ Tools Used
-* **Power Query**: For deep data cleaning, text splitting, and dimensional modeling.
+* **Power Query**: For deep data cleaning, text splitting, and dimensional modeling, `my_query.m` [here](my_query.m)
 * **DAX Formulas**: To compute operational margins, distinct customer cohorts, and transaction totals.
 
 ## 📊 Core Dataset Scope
