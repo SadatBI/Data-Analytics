@@ -9,9 +9,10 @@ Using Power Query, I built a repeatable data transformation pipeline to extract 
 
 ![power query.png](src/power%20query.png)
 
-## 🛠️ Tools Used
+---
+
+## 🛠️ Tool Used
 * **Power Query**: For deep data cleaning, text splitting, and dimensional modeling, `my_query.m` [here](my_query.m)
-* **DAX Formulas**: To compute operational margins, distinct customer cohorts, and transaction totals.
 
 ## 📊 Core Dataset Scope
 * **Unique Customers Profiles**: Comprehensive tracking across regional markets (USA, Canada, UK, Australia, Singapore).
@@ -36,3 +37,17 @@ Using Power Query, I built a repeatable data transformation pipeline to extract 
 ### 💵 4. Financial KPI Formulation
 * **Order Calculations**: Engineered explicit mathematical fields at the row level to isolate true financial metrics, including `Cost Per Order` and `Sales Per Order`.
 * **Profit Visibility**: Structured a distinct `Profit Per Order` metric mapping the absolute variance between cost structures and gross retail revenue, finalized with strict currency constraints.
+
+---
+## Final Work
+![work data (sheet 1).png](src/work%20data%20(sheet%201).png)
+
+
+You can also view the PDF of the Excel file , `ZENO-MART-CUSTOMER-TRANSACTION-DATA (worked).pdf`. [here](ZENO-MART-CUSTOMER-TRANSACTION-DATA%20(worked).pdf).
+
+
+---
+## Files Included
+- `ZENO-MART-CUSTOMER-TRANSACTION-DATA (worked).xlsx`:[Cleaned Excel file.](docs/ZENO-MART-CUSTOMER-TRANSACTION-DATA%20(worked).xlsx).
+
+- `ZENO-MART-CUSTOMER-TRANSACTION-DATA.xlsx`: [Raw excel data from Zeno Mart.](docs/ZENO-MART-CUSTOMER-TRANSACTION-DATA.xlsx).
