@@ -4,7 +4,7 @@
 ExpressMart operates across major US cities, but the management team needed to look past raw numbers to understand how customers actually buy. I built a dynamic Excel dashboard to analyze $34.49M in sales, pinpoint peak hours, isolate top products, and track regional trends. This data provides the retail operations team with concrete evidence to optimize staffing schedules, inventory levels, and regional marketing budgets.
 
 ## 🛠️ Tools Used
-* **Power Query:** For data cleaning, modeling, and dashboard construction, `my_query.m [here](Power_query/my_query.m)
+* **Power Query:** For data cleaning, modeling, and dashboard construction, `my_query.m` [view here](Power_query/my_query.m)
 * **Pivot Table:** To engineer real-time KPIs like total Sales, quantities sold, and time-of-day distributions.
 
   ![Pivot table_worksheet.png](Screenshot/Pivot%20table_worksheet.png)
