@@ -4,8 +4,25 @@
 ExpressMart operates across major US cities, but the management team needed to look past raw numbers to understand how customers actually buy. I built a dynamic Excel dashboard to analyze $34.49M in sales, pinpoint peak hours, isolate top products, and track regional trends. This data provides the retail operations team with concrete evidence to optimize staffing schedules, inventory levels, and regional marketing budgets.
 
 ## 🛠️ Tools Used
-* **Power Query:** For data cleaning, modeling, and dashboard construction.
+* **Power Query:** For data cleaning, modeling, and dashboard construction, `my_query.m [here](Power_query/my_query.m)
 * **Pivot Table:** To engineer real-time KPIs like total Sales, quantities sold, and time-of-day distributions.
+
+  ![Pivot table_worksheet.png](Screenshot/Pivot%20table_worksheet.png)
+
+---
+
+## 🎛️ Interactive Dashboard Slicers
+Cross-filtering slicers are connected across all report pages via global data relationships.
+
+* **Temporal Slicers:** `Year` (2019-2020) and `Month` buttons isolate seasonal trends.
+* **Regional Slicers:** `City` multi-select buttons isolate specific state operations.
+* **Daypart Slicers:** `AM/PM` and `Quarter` blocks track shift-based performance.
+* **Report Connections:** All slicers link to backend tables for synchronized charts.
+
+![Slicers.png](Screenshot/Slicers.png)
+
+---
+
 
 ## 📊 Core Dashboard Metrics
 * **Total Sales:** $34,492,035.97
@@ -14,18 +31,61 @@ ExpressMart operates across major US cities, but the management team needed to l
 
 ## 💡 Key Analytical Insights
 
-### ⏰ 1. Customer Purchasing Behavior & Timing
-* **Afternoon/Evening Dominance:** A massive 70% of all purchases occur in the PM hours.
-* **Peak Hourly Demand:** Order volumes spike sharply around midday (11 AM – 12 PM) and again in the evening (6 PM – 7 PM).
-* **Actionable Strategy:** Shift staff scheduling to ensure peak floor and checkout coverage during these exact windows. Run targeted online flash sales at 5 PM right before the evening rush.
+### 1. Seasonal Trends
+Sales peak dramatically during the holiday season. 
 
-### 📦 2. Top-Performing Products
-* **The Tech Drivers:** Premium electronics rule the revenue charts.
-* **Top Assets:** The Macbook Pro Laptop is the clear #1 sales driver, followed closely by the iPhone and ThinkPad Laptop.
-* **Actionable Strategy:** Prioritize warehouse supply and shelf space for these top 3 high-value tech assets to guarantee they never hit an "out-of-stock" scenario.
+* **Top Quarter:** Qtr 4 dominates sales.
+* **Top Month:** December brings peak revenue.
+* **Lowest Month:** January marks the sharpest dip.
+* **Action:** Increase marketing budgets by late September.
 
-### 🌍 3. Regional & Temporal Sales Trends
-* **Top Cities:** San Francisco dominates the regional rankings, followed closely by Los Angeles and New York City.
-* **Lower Volume Markets:** Texas markets (Dallas, Austin) sit at the lower end of the volume chain.
-* **Quarterly Spikes:** Quarter 4 is the strongest sales period, driven heavily by a massive peak in December (holiday shopping).
-* **Actionable Strategy:** Allocate a larger portion of the regional marketing budget to the West Coast hubs. Ramp up temporary seasonal hiring and inventory storage starting in late October to handle the Q4 surge.
+ ![months_quater.png](Screenshot/months_quater.png)
+
+### 2. Regional Performance
+Revenue concentrates heavily within coastal urban tech hubs.
+
+* **Top City:** San Francisco leads all regions.
+* **Runners Up:** Los Angeles and New York.
+* **Weakest Hubs:** Austin, Portland, and Seattle.
+* **Action:** Reallocate marketing funds to the West Coast.
+
+ ![sales_per_city.png](Screenshot/sales_per_city.png)
+
+
+### 3. Customer Buying Behavior
+Order volumes depend heavily on time of day.
+
+* **Daypart Split:** 70% of transactions happen post-noon.
+* **Midday Peak:** Orders spike from 11 AM–12 PM.
+* **Evening Peak:** Peak shopping occurs from 6 PM–7 PM.
+* **Action:** Align customer support shifts with peak hours.
+
+ ![Sales_by_day.png](Screenshot/Sales_by_day.png)
+
+---
+
+## 📋 Strategic Recommendations
+
+* **Staffing:** Increase team sizes during evening shopping peaks.
+* **Inventory:** Hedge inventory for Macbooks before Qtr 4.
+* **Marketing:** Run localized product bundles in San Francisco.
+
+---
+## Final Dashboard
+![Dashboard_worksheet.png](Screenshot/Dashboard_worksheet.png)
+
+
+You can also view the PDF of the Excel file , `ExpressMartData.TOT (Dashboard).pdf`. [here](pdf%20reports/ExpressMartData.TOT%20(Dashboard).pdf).
+
+
+---
+## Files Included
+- `ExpressMartData.TOT (Worked).xlsb`:[Cleaned Excel file.](datasets/ExpressMartData.TOT%20(Worked).xlsb).
+
+- `ExpressMartData.TOT.xlsx`: [Raw excel data from Express mart.](datasets/ExpressMartData.TOT.xlsx).
+
+
+---
+
+*Thanks for checking out my excel project! Feel free to connect or drop any suggestions on my layout!*
+*please contact via LinkedIn [Sadat Ibrahim](https://www.linkedin.com/in/sadat-gh)*
